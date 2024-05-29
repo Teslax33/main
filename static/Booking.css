@@ -1,0 +1,249 @@
+
+/* setting font for entire page unless changed by a more specific style */
+
+*:not(button){
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.navbar {
+    font-family: 'Pridi', serif;
+    background-color: rgba(0, 0, 0, 0); 
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.navbar.scrolled {
+    background-color: #000; /* Change background color to black */
+    transition: 0.3s; /* Add a smooth transition */
+}
+
+
+label.logo {
+    color:  rgb(202, 40, 40);
+    font-size: 30px;
+    line-height: 75px;
+    margin-left: 20px
+}
+
+
+.links a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 5px;
+    justify-content: space-around;
+    position: relative;
+    border-radius: 2px;
+    padding: 3px 9px;
+
+
+}
+
+.links {
+    display: inline-block;
+}
+
+ .links ul {
+    padding: none;
+    margin-top: 50px;
+    float: right;
+}
+
+.links li {
+    display: inline-block;
+    /* font-weight: 500; */
+}
+.scrolled .links a {
+    color:  rgb(202, 40, 40);
+    transition: 0.3s;
+}
+
+
+a.active, .links a:hover{
+    background-color:rgb(224, 104, 104);
+    transition: .5s;
+}
+
+
+.checkbtn {
+    font-size: 25px;
+    position: fixed; 
+    line-height: 80px; /* Position it vertically in the middle */
+    right: 30px; /* Adjust the distance from the right edge */
+    z-index: 1000; /* Ensure it's on top of other elements */
+    display:none;
+
+}
+
+
+#check{
+    display: none;
+}
+
+@media (max-width: 985px){
+    label.logo{ 
+        font-size: 30px;
+        
+    }
+}
+ 
+@media (max-width: 985px){
+    
+    .checkbtn {
+        display: block;
+        color:  rgb(202, 40, 40);
+
+    }
+
+    .links {
+        display: block; /* Change from inline-block to block */
+        text-align: center; /* Center the stacked links */
+   
+
+    }
+    .scrolled .links a {
+        color: white;
+
+    }
+
+    .links ul {
+        float: none; /* Remove the float property */
+        margin-top:0px; /* Add some top margin between stacked links */
+ 
+
+    }
+
+    .links li {
+        display: block; 
+      
+        /* Display list items as blocks for stacking */
+        margin-bottom: 0px; 
+        /* Add some bottom margin between stacked links */
+    }
+    
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #a76256;
+        top: 80px;
+        left: 0;
+        text-align: center;
+        transition: all .5s;
+    
+
+        
+    }
+    nav ul li{
+        display: block;
+        margin:20;
+        line-height: 80px;
+
+        
+    }
+    nav ul li a{
+        font-size: 20px;   
+     
+    }
+    
+    a:hover, a.active{
+        background: none;
+        transition: .5s;
+        
+    }
+    
+    #check:checked ~ ul {
+        left: -100%;
+    }
+
+}
+
+.slider-container {
+    height: 400px;
+    width: 800px;
+    font-family: 'Pridi', serif;
+    padding: 20px;
+    color: rgb(248, 232, 232);
+    display: flex;
+    align-items: center; /* Center vertically */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-70%);
+    z-index: 1; /* Ensure it's above the picture */
+    background-color: rgba(0, 0, 0, 0.479); /* Semi-transparent dark background */
+
+}
+
+.slider-container h1 {
+    font-size: 80px;
+}
+
+.slider-container p {
+    font-size: 24px;
+}
+
+
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px; 
+}
+
+.headline {
+    margin-top: 20px;
+    font-size: 20px;
+    letter-spacing: 0px;
+}
+
+.content h2 {
+    color: rgb(202, 40, 40);
+    font-family: 'Pridi', serif;
+    font-size: 25px;
+    font-weight: 500;
+
+}
+
+
+
+.home-picture-containter{  
+    /* max-width: 1500px; */
+    width: 100%;
+    height:100vh;
+    box-shadow: 2px 2px 2px black;
+    background-image: url("https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg");
+    background-repeat: no-repeat;
+    background-size:cover;
+
+
+}
+
+.contact-section {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 25px 0; /* Add padding top and bottom for spacing */
+}
+  
+.contact-info {
+    max-width: 600px; /* Set maximum width for better readability */
+    margin: 0 auto ; /* Center the contact info horizontally */
+    text-align: center; /* Center align the text */
+}
+  
+.contact-info h2 {
+    font-size: 24px; /* Heading font size */
+    margin-bottom: 20px; /* Add spacing below the heading */
+}
+  
+.contact-info p {
+    font-size: 18px; /* Paragraph font size */
+    margin-bottom: 10px; /* Add spacing between paragraphs */
+}
+
+
