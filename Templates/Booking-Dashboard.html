@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking-Dashboard</title>
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Booking-Dashboard.css') }}">
+    
+    <script src="{{ url_for('static', filename='Booking-Dash.js') }}"></script>
+
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+    <!-- ====Google Maps API Script Insert=======-->
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+  
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&libraries=places"></script>
+
+
+
+
+    <!-- =========================================== -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded: opsz, wght,
+    FILL,GRAD@20 .. 48,100 .. 700,0 .. 1,-50 .. 200">
+
+</head>
+
+
+<body>
+    <header class="navbar">
+        <nav>
+            <label class="logo">Sergio's Limousine Company</label>
+            <ul class="links">
+                <li><a href="#contact">Book</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+                <li><a href="{{url_for('logout')}}" class="#active" >Logout</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <main class="main-container">
+        <div class="main-title">
+            <p class="dashboard-title">OWNERS DASHBOARD</p>
+        </div>
+
+        <div class="main-cards">
+            <div  id="book_card" class="card">
+                <div class="card-inner">
+                    <p class="text-primary">BOOKINGS</p>
+                    <a href ="{{url_for('logout')}}"><span class="material-symbols-outlined">book</span></a>
+                </div>
+                <span class="text-primary dashboard-title">18</span>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">TRIPS TAKEN</p>
+                    <span class="material-symbols-outlined">
+                        your_trips
+                        </span>
+                </div>
+                <span class="text-primary dashboard-title">50</span>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">POINTS EARNED</p>
+                    <span class="material-symbols-outlined">
+                        stars
+                        </span>
+                </div>
+                <span class="text-primary dashboard-title">13,500</span>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">MONEY SAVED</p>
+                    <span class="material-symbols-outlined">
+                        
+                    </span>
+                </div>
+                <span class="text-primary dashboard-title">249</span>
+            </div>
+        </div>
+    </main>
+    <section class="booking_buttons">
+        <div class="action_buttons_wrapper">
+            <div id="calc_container" class="d-flex">
+                <h3 class="set_dest">Book A Trip or Get An Estimate</h3>
+                <p>If you would like to get an estimate of how much a trip would cost, please enter a location of origin and destination. <span class="IMP"> -- please keep in mind their are many factors that may change the price. The bill is sent after each trip --</span></p>
+                <form id="distance_form" class="w-50">
+                    <div class="form_group">
+                        <label>Origin:</label>
+                        <input id="from" type="text" placeholder="Enter Origin Location" required class="form_control">
+                        <input id="origin" type="hidden" placeholder="Enter Origin Location" required name="origin">
+                    </div>
+    
+                    <div class="form_group">
+                        <label>Destination:</label>
+                        <input id="to" type="text" placeholder="Enter Destination Location" required class="form_control">
+                        <input id="destination" type="hidden" required>
+                    </div>
+    
+                    <button type="submit"  class="btn btn-primary">Calculate</button>
+                 
+                </form>
+
+                <form>
+                    <button id="userInfoButton" class="btn btn-primary" type="button">Book This Trip</button>
+                    <div id="userInfoModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" type="button"onclick="closeModal()">&times;</span>
+                            <form action="{{ url_for('dash') }}" method="POST" id="userInfoForm">
+                                <h2>Book This Trip</h2>
+                                <table>
+                                    <tr>
+                                        <td><label for="fullName">Full Name:</label></td>
+                                        <td><input type="text" id="fullName" name="fullName" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="email">Email:</label></td>
+                                        <td><input type="email" id="email" name="email" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="from_res">From:</label></td>
+                                        <td><input type="text" id="from_res" name="from_res" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="to_res">To:</label></td>
+                                        <td><input type="text" id="to_res" name="to_res" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="date">Date:</label></td>
+                                        <td><input type="text" id="date" name="to_res" readonly></td>
+                                    </tr>
+                                </table>
+                                <input type="submit" value="Submit">
+                            </form>    
+                            <div class="cal_wrapper">
+                                <header>
+                                    <p class="current-date">September 2022</p>
+                                    <div class="icons">
+                                        <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                                        <span id="next"
+                                        class="material-symbols-rounded">chevron_right</span>
+                                    </div>
+                                </header>
+                                <div class="calendar">
+                                    <ul class="weeks">
+                                        <li>Sun</li>
+                                        <li>Mon</li>
+                                        <li>Tue</li>
+                                        <li>Wed</li>
+                                        <li>Thu</li>
+                                        <li>Fri</li>
+                                        <li>Sat</li>
+                                    </ul>
+                                    <ul class="days"></ul>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                </form>
+                
+                <div id="result" class="w-50">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Distance In Mile:
+                            <span id="in_mile" class="badge badge-primary badge-pill"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Distance is Kilo:
+                            <span id="in_kilo" class="badge badge-primary badge-pill"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            IN TEXT:
+                            <span id="duration_text" class="badge badge-primary badge-pill"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            IN MINUTES:
+                            <span id="duration_value" class="badge badge-primary badge-pill"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            FROM:
+                            <span id="from_result" class="badge badge-primary badge-pill"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            TO:
+                            <span id="to_result" class="badge badge-primary badge-pill"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Estimated Cost:
+                            <span id="est_cost" class="badge badge-primary badge-pill"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+            
+    <script>
+        $(function(){
+            // Adding input listeners
+            google.maps.event.addDomListener(window, 'load', function() {
+                var from_places = new google.maps.places.Autocomplete(document.getElementById('from'));
+                var to_places = new google.maps.places.Autocomplete(document.getElementById('to'));
+    
+                google.maps.event.addListener(from_places, 'place_changed', function(){
+                    var from_place = from_places.getPlace();
+                    var from_address = from_place.formatted_address;
+                    $('#origin').val(from_address);
+                });
+                google.maps.event.addListener(to_places, 'place_changed', function(){
+                    var to_place = to_places.getPlace();
+                    var to_address = to_place.formatted_address;
+                    $('#destination').val(to_address);
+                });
+            });
+    
+            function calculateDistance() {
+                var origin = $('#origin').val();
+                var destination = $('#destination').val();
+                var service = new google.maps.DistanceMatrixService();
+                service.getDistanceMatrix(
+                    {
+                        origins: [origin],
+                        destinations: [destination],
+                        travelMode: google.maps.TravelMode.DRIVING,
+                        unitSystem: google.maps.UnitSystem.IMPERIAL,  // This means Miles and feet
+                        // To use Kilometers use 'metric' instead of 'IMPERIAL'
+                        avoidHighways: false,
+                        avoidTolls: false  // Corrected spelling of avoidTolls
+                    }, callback);
+    
+            }
+    
+            // This holds the result for getting the distance
+            function callback(response, status) {
+                if (status != google.maps.DistanceMatrixStatus.OK) {
+                    $('#result').html(err);
+                } else {
+                    var origin = response.originAddresses[0];
+                    var destination = response.destinationAddresses[0];
+                    if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
+                        $('#result').html("Better get on a plane. There are no roads between " + origin + " and " + destination);
+                    } else {
+                        var distance = response.rows[0].elements[0].distance;
+                        var duration = response.rows[0].elements[0].duration;
+                        var origin = $('#from').val();
+                        var destination = $('#to').val();
+
+                        var distance_in_kilo = distance.value / 1000; // distance in kilometers
+                        var distance_in_mile = distance.value / 1609.34; // distance in miles
+                        var duration_text = duration.text;
+                        var duration_value = duration.value;
+
+                        // Update the HTML elements with the calculated values
+                        $('#in_mile').text(distance_in_mile.toFixed(2));
+                        $('#in_kilo').text(distance_in_kilo.toFixed(2));
+                        $('#duration_text').text(duration_text);
+                        $('#duration_value').text(duration_value);
+                        $('#from_result').text(origin);
+                        $('#to_result').text(destination);
+                        $('#from_res').text(origin);
+                        $('#to_res').text(destination);
+
+                        // Calculate estimated cost and display it
+                        var hourly_rate = 15;
+                        var estimated_cost = distance_in_mile * hourly_rate;
+                        $('#est_cost').text('$' + estimated_cost.toFixed(2));
+                    }
+                }
+            }
+
+            // print results on submit the form
+            $('#distance_form').submit(function(e) {
+                e.preventDefault();
+                calculateDistance();
+            });
+
+        });
+    </script>
+    
+    </section>
+    
+</body>
+</html>
+

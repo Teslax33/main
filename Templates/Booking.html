@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- <link   id="styleLink" href="C:\Users\camar\OneDrive\Documents\Joa Projects\Limo Booking Website\static\Booking.css", rel="stylesheet" /> -->
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Booking.css') }}">
+
+
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+ 
+    
+    <title>Booking</title>
+</head>
+<body>
+    <script src="{{ url_for('static', filename='Booking.js') }}"></script>
+    <header class="navbar">
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn"> 
+                    <i class="fa fa-bars"></i>
+            </label>
+            <label class="logo">Sergio's Limousine Company</label>
+            <ul class="links">
+                <li><a href="{{url_for('home')}}" class="#active">Home</a></li>
+                <li><a href="{{url_for('login')}}" class="#Book">Login</a></li>
+                <li><a href="{{url_for('register')}}">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{{url_for('clear')}}">Clear Data</a></li>
+
+            </ul>
+        </nav>
+    </header> 
+    
+    <div class="home-picture-containter"> 
+        <div class="slider-container">
+            <section class ="top-background">
+                <h1>Arrive in Style</h1>
+                <p>Your Premier Destination for Effortless Luxury Limo Bookings, Where Elegance Meets Convenience for Unforgettable Journeys</p>
+            </section>
+        </div>
+    </div>
+    
+    
+    <div class="content">
+        <h2>Book A Private Limo Ride Now!</h2> 
+            <p class="headline">Premier transportation solutions for elegant airport transfers, corporate travel, and stylish event transportation, with a focus on punctuality, safety, and unparalleled customer service.
+            Premier transportation solutions for elegant airport transfers, corporate travel, and stylish event transportation, with a focus on punctuality, safety, and unparalleled customer service.
+            </p> 
+    </div>
+   
+    <footer class="contact-section">
+        <div class="contact-info">
+          <h2>Contact Us</h2>
+          <p>Email: example@example.com</p>
+          <p>Phone: +1 123 456 7890</p>
+          <p>Address: 123 Main Street, City, Country</p>
+        </div>
+      </footer>
+
+</body>
+</html>
