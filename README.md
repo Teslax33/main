@@ -25,10 +25,10 @@ The Limo Booking Web Application is a comprehensive platform that allows users t
 [Demo coming soon](#)
 
 ## Screenshots
-![Home Screen](Images/Home.png)
-![Login](Images/Login.png)
-![Calculate](Images/Calc.png)
-![Book_info](Images/book_info.png)
+![Home Screen](images/Home.png)
+![Login](images/Login.png)
+![Calculate](images/Calc.png)
+![Book_info](images/book_info.png)
 
 
 ## Installation
