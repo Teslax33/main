@@ -32,26 +32,26 @@ The Limo Booking Web Application is a comprehensive platform that allows users t
 
 ## Learnings:
 
-###Google Maps API Integration:
+Google Maps API Integration:
 - Connected and configured Google Maps API for location-based functionalities.
 - Utilized JavaScript for dynamic map updates and location selection.
 
-###Flask Framework:
+### Flask Framework:
 - Built the backend with Flask, handling form submissions and data processing securely.
 - Integrated Flask-Login for user authentication and session management.
 
-###Frontend Development:
+### Frontend Development:
 - Designed and implemented a responsive UI with HTML, CSS, and JavaScript.
 - Utilized Flask-WTF for form handling and validation.
 
-###Issues and Resolutions:
+### Issues and Resolutions:
 Data Duplication on Page Reload:
 - Resolution: Managed form submissions to prevent unintended database entries.
 
-###User Data Access Control:
+### User Data Access Control:
 - Resolution: Implemented user-specific data filtering to ensure data privacy.
 
-###Styling and Layout:
+### Styling and Layout:
 - Resolution: Enhanced CSS skills to fix visibility issues and improve overall design.
 
 ## Installation
