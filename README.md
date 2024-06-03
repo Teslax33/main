@@ -4,6 +4,8 @@
 - [Overview](#overview)
 - [Features](#features)
 - [Demo](#demo)
+- [Screenshots](#screenshots)
+- [Learnings](#learnings)
 - [Installation](#installation)
 - [Prerequisites](#prerequisites)
 - [License](#license)
