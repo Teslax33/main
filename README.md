@@ -12,7 +12,7 @@
 
 
 ## Overview
-The Limo Booking Web Application is a comprehensive platform that allows users to book limo services, calculate distances, and estimate costs in real-time. The application is built using Flask, SQLAlchemy, and integrates Google Maps API for location and distance functionalities.
+The Limo Booking Web Application is a comprehensive platform that allows users to book limo services, calculate distances, and estimate costs in real-time. The application is built using **Flask, SQLAlchemy, and integrates Google Maps API** for location and distance functionalities.
 
 
 ## Features
