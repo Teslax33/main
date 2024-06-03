@@ -44,8 +44,8 @@ Google Maps API Integration:
 - Designed and implemented a responsive UI with HTML, CSS, and JavaScript.
 - Utilized Flask-WTF for form handling and validation.
 
-### Issues and Resolutions:
-Data Duplication on Page Reload:
+## Issues and Resolutions:
+### Data Duplication on Page Reload:
 - Resolution: Managed form submissions to prevent unintended database entries.
 
 ### User Data Access Control:
