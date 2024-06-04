@@ -76,15 +76,12 @@ a.active, .links a:hover{
 }
 
 
+@media (max-width: 900px){
 
-@media (max-width: 985px){
     label.logo{ 
         font-size: 30px;
         
     }
-}
- 
-@media (max-width: 985px){
     
     .checkbtn {
         display: block;
@@ -164,9 +161,9 @@ a.active, .links a:hover{
     
 }
 
-#check:checked ~ .login-background .login-wrapper {
+/* #check:checked ~ .login-background .login-wrapper {
     display: none;
-}
+} */
 
 .login-background {
     display:flex;
@@ -269,22 +266,28 @@ a.active, .links a:hover{
     margin-right: 3px;
 
 }
-.btn{
+.btn {
     width: 100%;
-    height: 40px;
-    background-color:rgb(224, 104, 104);
-    border:none;
-    outline:none;
+    height: 45px;
+    background: rgb(224, 104, 104);
+    border: none;
+    outline: none;
     border-radius: 6px;
     cursor: pointer;
-    font-family: 'Pridi', serif;
-    font-size: 1.2em;
-    color: #fff;
-    font-weight: 500px;
+    font-size: 1em;
+    color: white;
+    font-weight: 700;
+    margin-top: 5px;
+    transition: .5s;
 }
 
+
 .btn:hover {
-    border: 1px solid white;
+    background: rgb(104, 16, 16);
+}
+
+.btn:active {
+    background: rgb(224, 104, 104);
     transition: .1s;
 }
 
