@@ -1,12 +1,10 @@
-*:not(button){
+*:not(button) {
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
 }
-
-
 
 .navbar {
     font-family: 'Pridi', serif;
@@ -17,18 +15,15 @@
     z-index: 1000;
 }
 
-
 label.logo {
-    color:  rgb(202, 40, 40);
+    color: rgb(202, 40, 40);
     font-size: 30px;
     line-height: 75px;
-    margin-left: 20px
-
+    margin-left: 20px;
 }
 
-
-.links a{
-    color:  rgb(202, 40, 40);
+.links a {
+    color: rgb(202, 40, 40);
     text-decoration: none;
     font-size: 20px;
     margin-left: 30px;
@@ -37,27 +32,25 @@ label.logo {
     position: relative;
     border-radius: 2px;
     padding: 3px 9px;
-
-
 }
 
 .links {
     display: inline-block;
 }
 
- .links ul {
+.links ul {
     padding: none;
     margin-top: 50px;
     float: right;
 }
 
-.links li{
+.links li {
     display: inline-block;
 }
 
-a.active, .links a:hover{
-    background-color:rgb(224, 104, 104);
-    color:black;
+a.active, .links a:hover {
+    background-color: rgb(224, 104, 104);
+    color: black;
     transition: .5s;
 }
 
@@ -67,62 +60,43 @@ a.active, .links a:hover{
     line-height: 80px; /* Position it vertically in the middle */
     right: 30px; /* Adjust the distance from the right edge */
     z-index: 1000; /* Ensure it's on top of other elements */
-    display:none;
-
-}
-
-#check{
     display: none;
 }
 
-
-
-@media (max-width: 985px){
-    label.logo{ 
-        font-size: 30px;
-        
-    }
+#check {
+    display: none;
 }
- 
-@media (max-width: 985px){
+
+@media (max-width: 900px) {
+    label.logo {
+        font-size: 30px;
+    }
     
     .checkbtn {
         display: block;
-        color:  rgb(202, 40, 40);
-
+        color: rgb(202, 40, 40);
     }
 
     .links {
         display: block; /* Change from inline-block to block */
         text-align: center; /* Center the stacked links */
-   
-
     }
+
     .scrolled .links a {
         color: white;
     }
     
-    
-    div .login-wrapper {
-        display: none;
-    }
-
     .links ul {
         float: none; /* Remove the float property */
-        margin-top:0px; /* Add some top margin between stacked links */
- 
-
+        margin-top: 0px; /* Add some top margin between stacked links */
     }
 
     .links li {
         display: block; 
-      
-        /* Display list items as blocks for stacking */
-        margin-bottom: 0px; 
-        /* Add some bottom margin between stacked links */
+        margin-bottom: 0px;
     }
     
-    ul{
+    ul {
         position: fixed;
         width: 100%;
         height: 100vh;
@@ -131,43 +105,36 @@ a.active, .links a:hover{
         left: 0;
         text-align: center;
         transition: all .5s;
-    
-
-        
     }
-    nav ul li{
+    
+    nav ul li {
         display: block;
-        margin:20;
+        margin: 20;
         line-height: 80px;
-
-        
-    }
-    nav ul li a{
-        font-size: 20px;  
-        color: white; 
-     
     }
     
-    a:hover, a.active{
+    nav ul li a {
+        font-size: 20px;
+        color: white;
+    }
+    
+    a:hover, a.active {
         background: none;
         transition: .5s;
-        
     }
     
-    a.active, .links a{
-        color:black;
+    a.active, .links a {
+        color: black;
     }
     
     #check:checked ~ ul {
         left: -100%;
     }
-
 }
 
 .login-background {
-    display:flex;
+    display: flex;
     justify-content: center;
-
     align-items: center;
     min-height: 100vh;
     background-image: url("https://www.allstarvip.com/wp-content/uploads/2021/06/airport-limo-service.jpg");
@@ -178,25 +145,25 @@ a.active, .links a:hover{
     position: relative;
     width: 400px;
     height: 420px;
-    border: 2px solid rgba(255,255, 255, .5);
+    border: 2px solid rgba(255, 255, 255, .5);
     background: transparent;
     border-radius: 20px;
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 25px rgba(0,0,0,.5);
+    box-shadow: 0 0 25px rgba(0, 0, 0, .5);
     display: flex;
     background-color: #f5f5f593;
     justify-content: center;
     align-items: center;
-
 }
-.form-box-login h2{
+
+.form-box-login h2 {
     font-size: 2em;
     height: 45px;
     font-family: 'Pridi', serif;
-    color:rgb(0, 0, 0);
-    text-align:center;   
-
+    color: rgb(0, 0, 0);
+    text-align: center;
 }
+
 .login-wrapper .form-box-login {
     width: 100%;
     padding: 40px;
@@ -206,9 +173,9 @@ a.active, .links a:hover{
     position: relative;
     width: 100%;
     height: 35px;
-    border-bottom:2px solid rgb(224, 104, 104);
+    border-bottom: 2px solid rgb(224, 104, 104);
     margin: 25px 0;
-    transform: translateY(5px)
+    transform: translateY(5px);
 }
 
 .input-box label {
@@ -216,7 +183,7 @@ a.active, .links a:hover{
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    font-size:1em;
+    font-size: 1em;
     font-weight: 600;
     pointer-events: none;
     transition: .5s;
@@ -225,67 +192,79 @@ a.active, .links a:hover{
 .input-box input:focus~label,
 .input-box input:valid~label {
     top: -5px;
-
 }
 
-.input-box input{
+.input-box input {
     width: 100%;
     height: 60%;
     font-family: 'Pridi', serif;
     background: transparent;
     outline: none;
-    margin-top:12px;
+    margin-top: 12px;
     border: none;
     font-size: 1em;
-    font-weight: 600px; 
+    font-weight: 600px;
     padding: 0 35px 0 5px;
-
 }
+
 .input-box .icon {
     position: absolute;
     right: 9px;
     font-size: 1.2em;
     color: black;
-
 }
 
-.remember-forgot{
+.remember-forgot {
     width: 100%;
     height: 100%;
     font-family: 'Pridi', serif;
     font-size: 16px;
     color: black;
-    margin: -15px 0 15px; 
+    margin: -15px 0 15px;
     display: flex;
     justify-content: space-between;
 }
 
-.remember-forgot label input {
-    accent-color:  rgb(112, 98, 20);
-    margin-right: 3px;
-
-}
-.btn{
+.btn {
     width: 100%;
-    height: 40px;
-    background-color:rgb(224, 104, 104);
-    border:none;
-    outline:none;
+    height: 45px;
+    background: rgb(224, 104, 104);
+    border: none;
+    outline: none;
     border-radius: 6px;
     cursor: pointer;
-    font-family: 'Pridi', serif;
-    font-size: 1.2em;
-    color: #fff;
-    font-weight: 500px;
+    font-size: 1em;
+    color: white;
+    font-weight: 700;
+    margin-top: 5px;
+    transition: .5s;
 }
 
 .btn:hover {
-    border: 1px solid white;
+    background: rgb(104, 16, 16);
+}
+
+.btn:active {
+    background: rgb(224, 104, 104);
     transition: .1s;
 }
 
-.login-register{
-    font-size: 16px;
+.login-register {
+    margin-top: 20px;
     text-align: center;
-    margin: 20px 0 10px;
+    font-size: .9em;
+    color: black;
+    font-family: 'Pridi', serif;
+}
+
+.register-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(224, 104, 104);
+    transition: .5s;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+    transition: .5s;
 }
